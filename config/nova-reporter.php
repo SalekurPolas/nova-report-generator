@@ -69,11 +69,10 @@ return [
          */
         'config' => [
             'format' => 'A4',
-            'orientation' => 'landscape',
+            'orientation' => 'portrait',
             'header' => [
-                'image_path' => public_path('northsmen.png'),
-                'description' => '',
-                'document_title' => '',
+                // 'image' => public_path('logo.png'),
+                'title' => 'Invoice'
             ]
         ]
     ],
@@ -85,21 +84,8 @@ return [
      *
      */
     'models' => [
-//        'order' => [
-//            'id',
-//            'total' => [
-//                'summable' => true
-//            ],
-//            'created_at' => [
-//                'label' => 'Date',
-//                'period' => true
-//            ]
-//        ],
-
-        'useR' => [
-            'id' => [
-                'summable' => true
-            ],
+        'User' => [
+            'id',
             'name',
             'email',
             'created_at' => [
@@ -107,5 +93,19 @@ return [
                 'period' => true
             ]
         ],
+        
+        /*
+        'order' => [
+            'id',
+            'total' => [
+                'summable' => true
+            ],
+            'created_at' => [
+                'label' => 'Date',
+                'period' => true
+            ]
+        ],
+       */
+
     ]
 ];
