@@ -1,0 +1,39 @@
+{
+    "name": "salekur/nova-report-generator",
+    "description": "A Laravel Nova report generator tool.",
+    "authors": [
+        {
+            "name": "Salekur Rahaman",
+            "email": "salekur9@gmail.com"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "nova",
+        "reporter"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "laravel/framework": "^8.0|^9.0|^10.0",
+        "laravel/nova": "^4.0",
+        "barryvdh/laravel-dompdf": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Salekur\\NovaReportGenerator\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Salekur\\NovaReportGenerator\\ToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
