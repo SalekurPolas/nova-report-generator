@@ -20,13 +20,19 @@
             text-align: center;
         }
 
-        .detail tbody .item:nth-child(odd) {
+        .detail tbody .item:nth-child(even) {
             background: #f2f2ff;
         }
+
+        .detail{
+            position: relative;
+            top: 40px;
+        }
+
     </style>
 </head>
 <body style="font-size: 16px; font-weight: 400; font-family: 'Nunito', sans-serif; padding: 0 50px;">
-    <header>
+    <header >
         <table style="width: 100%;">
             <tbody>
                 <tr>
@@ -64,12 +70,432 @@
         </table>
     </header>
 
-    <table class="detail" cellpadding="0" cellspacing="0" style="width: 100%; margin-top: 40px; border-collapse: collapse;">
+    <table class="detail" cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr style="background-color: #bbb; font-weight: 900;">
+                @foreach ($fields as $key => $value)
+                    <td style="width: 100%; padding: 6px 12px; {{ $key === array_key_first($fields) ? 'text-align: start;' : ($key === array_key_last($fields) ? 'text-align: right;' : 'text-align: center;') }}">
+                        {{ $value['label'] }}
+                    </td>
+                @endforeach
+            </tr>
+        </thead>
+
         <tbody>
             @foreach ($data as $row)
                 <tr class="item" style="font-weight: 400;">
-                    @foreach ($row as $key => $column)
-                        <td style="width: 100%; padding: 6px 12px; {{ $key === array_key_first($row) ? 'text-align: start;' : ($key === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $column }}
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+            
+            @foreach ($data as $row)
+                <tr class="item" style="font-weight: 400;">
+                    @foreach ($row as $index => $column)
+                        <td style="width: 100%; padding: 6px 12px; {{ $index === array_key_first($row) ? 'text-align: start;' : ($index === array_key_last($row) ? 'text-align: right;' : 'text-align: center;') }}">
                             {{ $column }}
                         </td>
                     @endforeach
@@ -77,10 +503,10 @@
             @endforeach
 
             <tr style="font-weight: 400;">
-                @foreach ($fields as $key => $field)
-                    @if(array_key_exists('summable', $field))
-                        <td style="width: 100%; padding: 6px 12px; border-top: 1px solid black; {{ $key === array_key_first($fields) ? 'text-align: start;' : ($key === array_key_last($fields) ? 'text-align: right;' : 'text-align: center;') }}">
-                            {{ $field['sum'] }}
+                @foreach ($fields as $indexKey => $fieldValue)
+                    @if(array_key_exists('summable', $fieldValue))
+                        <td style="width: 100%; padding: 6px 12px; border-top: 1px solid black; {{ $indexKey === array_key_first($fields) ? 'text-align: start;' : ($indexKey === array_key_last($fields) ? 'text-align: right;' : 'text-align: center;') }}">
+                            {{ $fieldValue['sum'] }}
                         </td>
                     @else
                         <td style="width: 100%; padding: 6px 12px;"></td>

@@ -137,10 +137,13 @@
             },
 
             'selected.period': function() {
+                this.selected.from = null;
+                this.selected.to = null;
                 this.filter();
             },
 
             'selected.from': function() {
+                this.selected.to = null;
                 this.filter();
             },
 
