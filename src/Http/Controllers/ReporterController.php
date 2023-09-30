@@ -194,7 +194,7 @@ class ReporterController extends Controller {
         if ($request->channel == 'csv') {
             $fp = fopen($name . '.csv', 'w');
 
-            foreach ($data as $fields) {
+            foreach (array_merge([$columns], $data) as $fields) {
                 fputcsv($fp, $fields);
             }
 
@@ -221,7 +221,7 @@ class ReporterController extends Controller {
             $viewData = [
                 'config' => $config,
                 'fields' => $request->fields,
-                'data' => array_merge([$columns], $data)
+                'data' => $data
             ];
 
             $pdf = Pdf::loadView('nova-reporter::pdf', $viewData);

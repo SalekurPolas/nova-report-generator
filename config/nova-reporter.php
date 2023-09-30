@@ -97,7 +97,9 @@ return [
 //        ],
 
         'useR' => [
-            'id',
+            'id' => [
+                'summable' => true
+            ],
             'name',
             'email',
             'created_at' => [
