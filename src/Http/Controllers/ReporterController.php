@@ -193,8 +193,13 @@ class ReporterController extends Controller {
         // work for csv
         if ($request->channel == 'csv') {
             $fp = fopen($name . '.csv', 'w');
+            $sums = [];
 
-            foreach (array_merge([$columns], $data) as $fields) {
+            foreach ($request->fields as $field => $value) {
+                $sums[] = !empty($value['sum']) ? '(Sum) ' . $value['sum'] : '';
+            }
+
+            foreach (array_merge([$columns], $data, [$sums]) as $fields) {
                 fputcsv($fp, $fields);
             }
 
@@ -210,9 +215,8 @@ class ReporterController extends Controller {
         if ($request->channel == 'pdf') {
             $config = [
                 'name' => $name,
-                'image_path' => config('nova-reporter.export.config.header.image_path'),
-                'description' => config('nova-reporter.export.config.header.description', ''),
-                'document_title' => config('nova-reporter.export.config.header.document_title', ''),
+                'image' => config('nova-reporter.export.config.header.image'),
+                'title' => config('nova-reporter.export.config.header.title'),
                 'period' => $request->period,
                 'from' => $request->from,
                 'to' => $request->to
