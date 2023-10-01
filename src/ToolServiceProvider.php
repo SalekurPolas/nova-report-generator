@@ -31,11 +31,11 @@ class ToolServiceProvider extends ServiceProvider {
 
         $this->publishes([
             __DIR__.'/../config/nova-reporter.php' => config_path('nova-reporter.php')
-        ], 'config');
+        ], 'reporter-config');
 
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/nova-reporter'),
-        ], 'views');
+        ], 'reporter-views');
     }
 
     /**
