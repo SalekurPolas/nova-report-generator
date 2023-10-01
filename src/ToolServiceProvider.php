@@ -20,19 +20,22 @@ class ToolServiceProvider extends ServiceProvider {
             $this->routes();
         });
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-reporter');
-
-        $this->publishes([
-            __DIR__.'/../config/nova-reporter.php' => config_path('nova-reporter.php'),
-            __DIR__.'/../resources/views' => resource_path('views/vendor/nova-reporter'),
-        ]);
-
         Nova::serving(function (ServingNova $event) {
             Nova::provideToScript([
                 'reporter.name' => config('nova-reporter.name'),
                 'reporter.path' => config('nova-reporter.path'),
             ]);
         });
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-reporter');
+
+        $this->publishes([
+            __DIR__.'/../config/nova-reporter.php' => config_path('nova-reporter.php')
+        ], 'config');
+
+        $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('views/vendor/nova-reporter'),
+        ], 'views');
     }
 
     /**
@@ -41,9 +44,9 @@ class ToolServiceProvider extends ServiceProvider {
      * @return void
      */
     protected function routes() {
-        // if ($this->app->routesAreCached()) {
-        //     return;
-        // }
+        if ($this->app->routesAreCached()) {
+            return;
+        }
 
         Nova::router(['nova', Authenticate::class, Authorize::class], config('nova-reporter.path'))
             ->group(__DIR__.'/../routes/inertia.php');
