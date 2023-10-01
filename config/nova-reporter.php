@@ -87,7 +87,6 @@ return [
         'user' => [
             'name',
             'email',
-            'phone',
             'created_at' => [
                 'label' => 'Date',
                 'period' => true
@@ -96,11 +95,10 @@ return [
         
         // 'order' => [
         //     'number',
-        //     'total_price' => [
+        //     'status',
+        //     'price' => [
         //         'summable' => true
         //     ],
-        //     'status',
-        //     'payment_status',
         //     'created_at' => [
         //         'label' => 'Date',
         //         'period' => true
