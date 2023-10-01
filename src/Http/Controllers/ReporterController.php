@@ -23,6 +23,8 @@ class ReporterController extends Controller {
         foreach ($resources as $resource => $fields) {
             $resource = ucfirst(strtolower($resource));
 
+            
+
             if (!class_exists('App\\Models\\' . $resource)) {
                 return response()->json([
                     'status' => false,
@@ -68,13 +70,25 @@ class ReporterController extends Controller {
                             'error' => "Only one period field allowed on {$resource}"
                         ]);
                     }
-                    
-                    if (!in_array(Schema::getColumnType($table, $field), ['date', 'datetime'])) {
-                        return response()->json([
-                            'status' => false,
-                            'message' => 'Something went wrong !',
-                            'error' => "Field {$field} must be date or datetime on {$resource}"
-                        ]);
+
+                    // if (!in_array(Schema::getColumnType($table, $field), ['date', 'datetime'])) {
+                    //     return response()->json([
+                    //         'status' => false,
+                    //         'message' => 'Something went wrong !',
+                    //         'error' => "Field {$field} must be date or datetime on {$resource}"
+                    //     ]);
+                    // }
+
+                    try {
+                        if (!in_array(Schema::getColumnType($table, $field), ['date', 'datetime'])) {
+                            return response()->json([
+                                'status' => false,
+                                'message' => 'Something went wrong !',
+                                'error' => "Field {$field} must be date or datetime on {$resource}"
+                            ]);
+                        }
+                    } catch (\Exception $e) {
+                        // ...
                     }
 
                     $period = true;
@@ -178,11 +192,18 @@ class ReporterController extends Controller {
         foreach ($request->data as $item) {
             $temp = [];
             foreach ($request->fields as $field => $value) {
-                if (in_array(Schema::getColumnType($table, $field), ['date', 'datetime'])) {
+                $regex = '/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}).(\d{6})Z$/';
+                if (preg_match($regex, $item[$field])) {
                     $date = Carbon::parse($item[$field]);
                     $temp[] = $date->format('Y-m-d h:i:s A');
                     continue;
                 }
+
+                // if (in_array(Schema::getColumnType($table, $field), ['date', 'datetime'])) {
+                //     $date = Carbon::parse($item[$field]);
+                //     $temp[] = $date->format('Y-m-d h:i:s A');
+                //     continue;
+                // }
 
                 $temp[] = $item[$field];
             }
