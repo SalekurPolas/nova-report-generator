@@ -69,9 +69,9 @@ return [
          */
         'config' => [
             'format' => 'A4',
-            'orientation' => 'portrait',
+            'orientation' => 'landscape',
             'header' => [
-                // 'image' => public_path('logo.png'),
+                // 'image' => public_path('images/logo.png'),
                 'title' => 'Invoice'
             ]
         ]
@@ -84,28 +84,27 @@ return [
      *
      */
     'models' => [
-        'User' => [
-            'id',
+        'user' => [
             'name',
             'email',
+            'phone',
             'created_at' => [
                 'label' => 'Date',
                 'period' => true
             ]
         ],
         
-        /*
-        'order' => [
-            'id',
-            'total' => [
-                'summable' => true
-            ],
-            'created_at' => [
-                'label' => 'Date',
-                'period' => true
-            ]
-        ],
-       */
-
+        // 'order' => [
+        //     'number',
+        //     'total_price' => [
+        //         'summable' => true
+        //     ],
+        //     'status',
+        //     'payment_status',
+        //     'created_at' => [
+        //         'label' => 'Date',
+        //         'period' => true
+        //     ]
+        // ],
     ]
 ];
